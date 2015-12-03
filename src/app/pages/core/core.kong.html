@@ -1,0 +1,55 @@
+<div class="container server">
+  <h1>{{ kong.kongServerInfo.hostname }}</h1>
+  <p>{{ kong.kongServerInfo.tagline }}</p>
+  <ul class="list-group">
+    <li class="list-group-item">version : {{kong.kongServerInfo.version}}</li>
+    <li class="list-group-item">Lua version : {{kong.kongServerInfo.lua_version}}</li>
+  </ul>
+
+  <div class="status">
+    <h3>Status</h3>
+    <div class="container status-items">
+      <div class="row">
+        <div class="col-md-3" ng-repeat="(key, value) in kong.kongServerStatus">
+          <h5>{{value}}</h5>
+          <p>
+            {{kong.metaData.status[key].text}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="plugins">
+    <h3>Plugins</h3>
+    <div class="available-on-server container">
+      <h4>Available on Server</h4>
+      <div class="row">
+        <div class="plugin  col-md-4" ng-repeat="plugin in kong.kongServerInfo.plugins.available_on_server">
+          <div class="panel panel-default">
+            <img class="icon" ng-src="{{ (plugin && kong.metaData) && kong.metaData.plugins[plugin].image || ''}}" alt="" />
+            <div class="panel-heading">{{kong.metaData.plugins[plugin].title}}</div>
+            <div class="panel-body">
+              {{kong.metaData.plugins[plugin].desc}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="available-on-server container">
+      <h4>Enabled in Cluster</h4>
+      <div class="row">
+        <div class="plugin  col-md-4" ng-repeat="plugin in kong.kongServerInfo.plugins.enabled_in_cluster">
+          <div class="panel panel-default">
+            <img class="icon" src="{{kong.metaData.plugins[plugin].image}}" alt="" />
+            <div class="panel-heading">{{kong.metaData.plugins[plugin].title}}</div>
+            <div class="panel-body">
+              {{kong.metaData.plugins[plugin].desc}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

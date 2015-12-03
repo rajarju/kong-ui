@@ -1,0 +1,10 @@
+<div class="container welcome-form text-center">
+  <h1>Welcome to Kong UI</h1>
+  <form id="kongConnectForm" class="form-inline" ng-submit="connect.setKongServer()">
+    <div class="form-group">
+      <label class="sr-only" for="kongUrl">Email address</label>
+      <input type="url" class="form-control" id="kongUrl" placeholder="http://kongurl:port" ng-model="connect.connectForm.kongUrl" required>
+    </div>
+    <button type="submit" class="btn btn-default">Connect</button>
+  </form>
+</div>

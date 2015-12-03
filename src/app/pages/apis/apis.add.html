@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Add API</h1>
+
+
+  <form>
+
+    <div class="form-group">
+      <label for="name"><code>name</code></label>
+      <input type="text" class="form-control" id="name" placeholder="name">
+      <span class="help-block">The API name. If none is specified, will default to the <code>request_host</code> or <code>request_path</code></span>
+    </div>
+
+
+    <div class="form-group">
+      <label for="request_host"><code>request_host</code></label>
+      <input type="text" class="form-control" id="request_host" placeholder="request_host">
+      <span class="help-block">The public DNS address that points to your API. For example, <code>mockbin.com</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="request_path"><code>request_path</code></label>
+      <input type="text" class="form-control" id="request_path" placeholder="request_path">
+      <span class="help-block">The public path that points to your API. For example, <code>/someservice</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.</span>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="strip_request_path"> <code>strip_request_path</code>
+        </label>
+        <br>
+        <span class="help-block">Strip the <code>request_path</code> value before proxying the request to the final API. For example a request made to <code>/someservice/hello</code> will be resolved to <code>upstream_url/hello</code>. By default is <code>false</code>.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="preserve_host"> <code>preserve_host</code>
+        </label>
+        <br>
+        <span class="help-block">Preserves the original <code>Host</code> header sent by the client, instead of replacing it with the hostname of the <code>upstream_url</code>. By default is <code>false</code>.</span>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="upstream_url"><code>upstream_url</code></label>
+      <input type="text" class="form-control" id="upstream_url" placeholder="upstream_url">
+      <span class="help-block">The base target URL that points to your API server, this URL will be used for proxying requests. For example, <code>https://mockbin.com</code>.</span>
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="#" ui-sref="apis.list" class="btn">Back</a>
+  </form>
+
+
+</div>

@@ -1,0 +1,194 @@
+{
+  "plugins":{
+    "basic-auth":{
+      "title":"Basic Authentication",
+      "image":"/assets/images/icons/plugins/basic-authentication.png",
+      "desc":"Add Basic Authentication to your APIs",
+      "info":"/plugins/basic-authentication"
+    },
+    "key-auth":{
+      "title":"Key Authentication",
+      "image":"/assets/images/icons/plugins/key-authentication.png",
+      "desc":"Add a key authentication to your APIs",
+      "info":"/plugins/key-authentication"
+    },
+    "oauth2":{
+      "title":"OAuth 2.0 Authentication",
+      "image":"/assets/images/icons/plugins/oauth2-authentication.png",
+      "desc":"Add an OAuth 2.0 authentication to your APIs",
+      "info":"/plugins/oauth2-authentication"
+    },
+    "hmac-auth":{
+      "title":"HMAC Authentication",
+      "image":"/assets/images/icons/plugins/hmac-authentication.png",
+      "desc":"Add HMAC Authentication to your APIs",
+      "info":"/plugins/hmac-authentication"
+    },
+    "jwt":{
+      "title":"JWT",
+      "image":"/assets/images/icons/plugins/jwt.png",
+      "desc":"Verify and authenticate JSON Web Tokens",
+      "info":"/plugins/jwt"
+    },
+    "acl":{
+      "title":"ACL",
+      "image":"/assets/images/icons/plugins/acl.png",
+      "desc":"Control which consumers can access APIs",
+      "info":"/plugins/acl"
+    },
+    "cors":{
+      "title":"CORS",
+      "image":"/assets/images/icons/plugins/cors.png",
+      "desc":"Allow developers to make requests from the browser",
+      "info":"/plugins/cors"
+    },
+    "ssl":{
+      "title":"SSL",
+      "image":"/assets/images/icons/plugins/ssl.png",
+      "desc":"Add a SSL certificate for an underlying service",
+      "info":"/plugins/ssl"
+    },
+    "ip-restriction":{
+      "title":"IP Restriction",
+      "image":"/assets/images/icons/plugins/ip-restriction.png",
+      "desc":"Whitelist or blacklist IPs that can make requests",
+      "info":"/plugins/ip-restriction"
+    },
+    "rate-limiting":{
+      "title":"Rate Limiting",
+      "image":"/assets/images/icons/plugins/rate-limiting.png",
+      "desc":"Rate-limit how many HTTP requests a developer can make",
+      "info":"/plugins/rate-limiting"
+    },
+    "response-ratelimiting":{
+      "title":"Response Rate Limiting",
+      "image":"/assets/images/icons/plugins/response-rate-limiting.png",
+      "desc":"Rate-Limiting based on a custom response header value",
+      "info":"/plugins/response-rate-limiting"
+    },
+    "request-size-limiting":{
+      "title":"Request Size Limiting",
+      "image":"/assets/images/icons/plugins/request-size-limiting.png",
+      "desc":"Block requests with bodies greater than a specific size",
+      "info":"/plugins/request-size-limiting"
+    },
+    "mashape-analytics":{
+      "title":"Galileo",
+      "image":"/assets/images/icons/plugins/galileo.png",
+      "desc":"Business Integellice Platform for APIs",
+      "info":"/plugins/galileo"
+    },
+    "request-transformer":{
+      "title":"Request Transformer",
+      "image":"/assets/images/icons/plugins/request-transformer.png",
+      "desc":"Modify the request before hitting the upstream server",
+      "info":"/plugins/request-transformer"
+    },
+    "response-transformer":{
+      "title":"Response Transformer",
+      "image":"/assets/images/icons/plugins/response-transformer.png",
+      "desc":"Modify the upstream response before returning it to the client",
+      "info":"/plugins/response-transformer"
+    },
+    "tcp-log":{
+      "title":"TCP",
+      "image":"/assets/images/icons/plugins/tcp-log.png",
+      "desc":"Send request and response logs to a TCP server",
+      "info":"/plugins/tcp-log"
+    },
+    "udp-log":{
+      "title":"UDP",
+      "image":"/assets/images/icons/plugins/udp-log.png",
+      "desc":"Send request and response logs to an UDP server",
+      "info":"/plugins/udp-log"
+    },
+    "http-log":{
+      "title":"HTTP",
+      "image":"/assets/images/icons/plugins/http-log.png",
+      "desc":"Send request and response logs to an HTTP server",
+      "info":"/plugins/http-log"
+    },
+    "file-log":{
+      "title":"File",
+      "image":"/assets/images/icons/plugins/file-log.png",
+      "desc":"Append request and response data to a log file on disk",
+      "info":"/plugins/file-log"
+    },
+    "nginx-plus-monitoring":{
+      "title":"NGINX Plus Live Monitoring",
+      "image":"/assets/images/icons/plugins/nginx-plus-monitoring.png",
+      "desc":"Live Monitoring of NGINX Plus",
+      "info":"/plugins/nginx-plus-monitoring"
+    }
+  },
+  "plugin_settings":{
+    "schema": {
+      "boolean" : {
+
+      },
+      "number" : {
+
+      },
+      "array" : {
+
+      },
+      "string" : {
+
+      },
+      "enum" : {
+
+      },
+      "url" : {
+
+      }
+    }
+  },
+  "status" :{
+    "connections_handled":   {
+      "text" : "Connections Handled"
+    },
+    "connections_reading":   {
+      "text" : "Connections Reading"
+    },
+    "connections_active":   {
+      "text" : "Connections Active"
+    },
+    "connections_waiting":   {
+      "text" : "Connections Waiting"
+    },
+    "connections_writing":   {
+      "text" : "Connections Writing"
+    },
+    "total_requests":   {
+      "text" : "Total Requests"
+    },
+    "connections_accepted":   {
+      "text" : "Connections Accepted"
+    }
+  },
+  "apis": {
+    "keys" :{
+      "upstream_url" : {
+        "text" : "Upstream Url"
+      },
+      "request_path" : {
+        "text" : "Request Path"
+      },
+      "id" : {
+        "text" : "ID"
+      },
+      "created_at" : {
+        "text" : "Created At"
+      },
+      "preserve_host" : {
+        "text" : "Preseve Host"
+      },
+      "name" : {
+        "text" : "Name"
+      },
+      "request_host" : {
+        "text" : "Request Host"
+      }
+    }
+  }
+}

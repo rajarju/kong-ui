@@ -1,0 +1,143 @@
+// Colors
+// -------------------------
+
+$text-color: #505659;
+$light-gray: #5c6266;
+$middle-gray: #45494d;
+$dark-gray: #323638;
+
+// New colors
+// -------------------------
+
+$gray: #ebebeb;
+$gray-darker: #262e33;
+$gray-dark: #505659;
+$gray-light: #fafafa;
+$gray-lighter: #fafbfc;
+
+$blue: #0070bf;
+$blue-light: #178fe5;
+$navy-darker: #042943;
+$navy-dark: #294b62;
+$red: #eb3838;
+$green: #43bf58;
+
+
+$navbar-height: 70px;
+$navbar-inverse-color:                      #FFF;
+$navbar-inverse-bg:                         #042943;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
+//
+// // Inverted navbar links
+$navbar-inverse-link-color:                 rgba(255,255,255,0.8);
+$navbar-inverse-link-hover-color:           #fff !default;
+// $navbar-inverse-link-hover-bg:              transparent !default;
+$navbar-inverse-link-active-color:          rgba(255, 255, 255, 0.4);
+$navbar-inverse-link-active-bg:             transparent;
+// $navbar-inverse-link-disabled-color:        #444 !default;
+// $navbar-inverse-link-disabled-bg:           transparent !default;
+//
+// // Inverted navbar brand label
+// $navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
+// $navbar-inverse-brand-hover-color:          #fff !default;
+// $navbar-inverse-brand-hover-bg:             transparent !default;
+//
+// // Inverted navbar toggle
+// $navbar-inverse-toggle-hover-bg:            #333 !default;
+// $navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+// $navbar-inverse-toggle-border-color:        #333 !default;
+
+$font-size-h1:                              36px;
+$headings-font-weight:    400;
+
+
+$input-border-radius: 3px;
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+
+
+label{
+  font-weight: 600;
+}
+
+.form-group{
+  label{
+
+  }
+  .form-control{
+    margin-bottom: 10px;
+    color: $gray-dark;
+  }
+  .description{
+
+
+  }
+}
+
+.checkbox{
+  label{
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+}
+
+
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border-radius: 3px;
+  letter-spacing: 0;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 13px;
+  color: $blue;
+  border-color: #bae2cc;
+  height: 36px;
+  line-height: 35px;
+  padding: 0 13px;
+  margin: 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $blue;
+    border-color: lighten($blue, 40%);
+  }
+
+  &:hover {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, .15), rgba(189, 230, 207, .15));
+  }
+
+  &:active {
+    background: #e8f8ee;
+  }
+}
+
+
+.btn.btn-primary,
+button.btn-primary,
+input[type="submit"].btn-primary,
+input[type="reset"].btn-primary,
+input[type="button"].btn-primary {
+  border: 0 none;
+  padding: 1px 14px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  background-color: $green;
+  background-image: linear-gradient(to bottom, #29af65, #20a659);
+  box-shadow: inset 0 -1px 0 #177942;
+  color: #FFF;
+  &:hover {
+    background-image: linear-gradient(to bottom, #16a257, #0c8d41);
+    box-shadow: inset 0 -1px 0 #096830;
+  }
+
+  &:active {
+    background-image: linear-gradient(to bottom, #0c803c, #149651);
+    box-shadow: inset 0 1px 0 #085e2c;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  }
+}
