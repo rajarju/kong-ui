@@ -20,8 +20,11 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController() {
+    function NavbarController(kongServer) {
       var vm = this;
+      vm.disconnect = function(){
+        kongServer.disconnect();
+      }
     }
   }
 
