@@ -21,6 +21,7 @@
         $state.go('api.view', {apiId: vm.api.id});
       }, function(error){
         angular.forEach(error.data, function(value, key){
+          vm.apiEditForm[key] = vm.apiEditForm[key] || {};
           vm.apiEditForm[key].$error = vm.apiEditForm[key].$error || {};
           vm.apiEditForm[key].$error.server = value;
         });

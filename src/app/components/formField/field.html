@@ -1,0 +1,26 @@
+<!-- <pre>{{form | json}}</pre> -->
+
+<div class="form-field" ng-switch="vm.config.form.type">
+
+
+
+<div ng-switch-when="text" class="form-group" ng-class="{'has-error' : form[name].$error.server}">
+  <label for="name">{{vm.config.text}}</label>
+  <input type="{{vm.config.form.type}}" name="{{name}}" class="form-control" ng-model="vm.model" id="{{name}}" placeholder="{{vm.config.text}}">
+  <span class="help-block" ng-show="form[name].$error.server" >{{form[name].$error.server}}</span>
+  <span class="help-block" ng-bind-html="vm.config.form.description"></span>
+</div>
+
+
+<div ng-switch-when="checkbox" class="form-group" ng-class="{'has-error' : vm.form[name].$error.server}">
+  <div class="checkbox">
+    <label>
+      <input type="{{vm.config.form.type}}" ng-model="vm.model" id="{{name}}"> {{vm.config.text}}
+    </label>
+    <br>
+    <span class="help-block" ng-show="form[name].$error.server" >{{form[name].$error.server}}</span>
+    <span class="help-block" ng-bind-html="vm.config.form.description"></span>
+  </div>
+</div>
+
+</div>

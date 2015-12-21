@@ -1,59 +1,14 @@
-<div class="container-fluid">
-  <h1>Add API</h1>
+<div class="container">
+  <h1 ng-show="!apis.api.id">Add API</h1>
+  <h1 ng-show="apis.api.id">Edit API</h1>
   <form name="apis.apiEditForm" ng-submit="apis.submitApi()">
-    <div class="form-group" ng-class="{'has-error' : apis.apiEditForm.name.$error}">
-      <label for="name"><code>name</code></label>
-      <input type="text" class="form-control" ng-model="apis.api.name" id="name" placeholder="name">
-      <span class="help-block" ng-show="apis.apiEditForm.name.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-      <span class="help-block">The API name. If none is specified, will default to the <code>request_host</code> or <code>request_path</code></span>
-    </div>
 
-    <div class="form-group">
-      <label for="request_host"><code>request_host</code></label>
-      <input type="text" class="form-control" ng-model="apis.api.request_host" id="request_host" placeholder="request_host">
-      <span class="help-block" ng-show="apis.apiEditForm.request_host.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-      <span class="help-block">The public DNS address that points to your API. For example, <code>mockbin.com</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.</span>
-    </div>
-
-    <div class="form-group">
-      <label for="request_path"><code>request_path</code></label>
-      <input type="text" class="form-control" ng-model="apis.api.request_path" id="request_path" placeholder="request_path" ng-validate>
-      <span class="help-block" ng-show="apis.apiEditForm.request_path.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-      <span class="help-block">The public path that points to your API. For example, <code>/someservice</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.</span>
-    </div>
-
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="apis.api.strip_request_path" id="strip_request_path"> <code>strip_request_path</code>
-        </label>
-        <br>
-        <span class="help-block" ng-show="apis.apiEditForm.strip_request_path.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-        <span class="help-block">Strip the <code>request_path</code> value before proxying the request to the final API. For example a request made to <code>/someservice/hello</code> will be resolved to <code>upstream_url/hello</code>. By default is <code>false</code>.</span>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="apis.api.preserve_host" id="preserve_host"> <code>preserve_host</code>
-        </label>
-        <br>
-        <span class="help-block" ng-show="apis.apiEditForm.preserve_host.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-        <span class="help-block">Preserves the original <code>Host</code> header sent by the client, instead of replacing it with the hostname of the <code>upstream_url</code>. By default is <code>false</code>.</span>
-      </div>
-    </div>
-
-
-    <div class="form-group" ng-class="{'has-error' : apis.apiEditForm.upstream_url.$error.server}">
-      <label for="upstream_url"><code>upstream_url</code></label>
-      <input type="text" class="form-control" ng-model="apis.api.upstream_url" name="upstream_url" id="upstream_url" placeholder="upstream_url" required>
-      <span class="help-block" ng-show="apis.apiEditForm.upstream_url.$error.server" >{{apis.apiEditForm.upstream_url.$error.server}}</span>
-      <span class="help-block" >The base target URL that points to your API server, this URL will be used for proxying requests. For example, <code>https://mockbin.com</code>.</span>
-
-    </div>
-
-    <pre>{{apis.apiEditForm | json}}</pre>
+    <form-field name="name" config="apis.metaData.api.keys.name" model="apis.api.name"></form-field>
+    <form-field name="request_host" config="apis.metaData.api.keys.request_host" model="apis.api.request_host"></form-field>
+    <form-field name="request_path" config="apis.metaData.api.keys.request_path" model="apis.api.request_path"></form-field>
+    <form-field name="strip_request_path" config="apis.metaData.api.keys.strip_request_path" model="apis.api.strip_request_path"></form-field>
+    <form-field name="preserve_host" config="apis.metaData.api.keys.preserve_host" model="apis.api.preserve_host"></form-field>
+    <form-field name="upstream_url" config="apis.metaData.api.keys.upstream_url" model="apis.api.upstream_url"></form-field>
 
     <button ng-show="!apis.api.id" type="submit" class="btn btn-primary">Add</button>
     <button ng-show="apis.api.id" type="submit" class="btn btn-primary">Update</button>

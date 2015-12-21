@@ -166,28 +166,71 @@
       "text" : "Connections Accepted"
     }
   },
-  "apis": {
+  "api": {
     "keys" :{
       "upstream_url" : {
-        "text" : "Upstream Url"
+        "text" : "Upstream Url",
+        "form" : {
+          "type" : "text",
+          "description" : "The base target URL that points to your API server, this URL will be used for proxying requests. For example, <code>https://mockbin.com</code>.",
+          "required" : false
+        }
       },
       "request_path" : {
-        "text" : "Request Path"
+        "text" : "Request Path",
+        "form" : {
+          "type" : "text",
+          "description" : "The public path that points to your API. For example, <code>/someservice</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.",
+          "required" : false
+        }
       },
       "id" : {
-        "text" : "ID"
+        "text" : "ID",
+        "form" : {
+          "type" : "text",
+          "description" : "",
+          "required" : false
+        }
       },
       "created_at" : {
-        "text" : "Created At"
+        "text" : "Created At",
+        "form" : {
+          "type" : "text",
+          "description" : "",
+          "required" : false
+        }
       },
       "preserve_host" : {
-        "text" : "Preseve Host"
+        "text" : "Preseve Host",
+        "form" : {
+          "type" : "checkbox",
+          "description" : "Preserves the original <code>Host</code> header sent by the client, instead of replacing it with the hostname of the <code>upstream_url</code>. By default is <code>false</code>.",
+          "required" : false
+        }
       },
       "name" : {
-        "text" : "Name"
+        "text" : "Name",
+        "form" : {
+          "type" : "text",
+          "description" : "The API name. If none is specified, will default to the <code>request_host</code> or <code>request_path</code>",
+          "required" : false
+        }
       },
       "request_host" : {
-        "text" : "Request Host"
+        "text" : "Request Host",
+        "form" : {
+          "type" : "text",
+          "description" : "The public DNS address that points to your API. For example, <code>mockbin.com</code>. At least <code>request_host</code> or <code>request_path</code> or both should be specified.",
+          "required" : true
+        }
+      },
+      "strip_request_path" : {
+        "text" : "Strip Request Path",
+        "form" : {
+          "type" : "checkbox",
+          "description" : "Strip the <code>request_path</code> value before proxying the request to the final API. For example a request made to <code>/someservice/hello</code> will be resolved to <code>upstream_url/hello</code>. By default is <code>false</code>.",
+          "required" : false
+        }
       }
     }
   }
