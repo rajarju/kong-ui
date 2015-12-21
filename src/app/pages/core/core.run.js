@@ -6,7 +6,7 @@
   .run(run);
 
   /** @ngInject */
-  function run($rootScope, $state, $location, kongServer){
+  function run(/* $rootScope, $state, $location, kongServer */){
 
   }
 

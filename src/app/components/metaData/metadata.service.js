@@ -5,7 +5,6 @@
   .factory('metaData', metaData);
 
   function metaData($q, $http){
-    var factory = {};
     var metaData = null;
     var deferred = $q.defer();
 

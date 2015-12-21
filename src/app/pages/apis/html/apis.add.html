@@ -1,8 +1,6 @@
-<div class="container">
+<div class="container-fluid">
   <h1>Add API</h1>
-
-
-  <form name="apis.apiEditForm" ng-submit="apis.saveApi()">
+  <form name="apis.apiEditForm" ng-submit="apis.submitApi()">
     <div class="form-group" ng-class="{'has-error' : apis.apiEditForm.name.$error}">
       <label for="name"><code>name</code></label>
       <input type="text" class="form-control" ng-model="apis.api.name" id="name" placeholder="name">
@@ -57,7 +55,8 @@
 
     <pre>{{apis.apiEditForm | json}}</pre>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button ng-show="!apis.api.id" type="submit" class="btn btn-primary">Add</button>
+    <button ng-show="apis.api.id" type="submit" class="btn btn-primary">Update</button>
     <a href="#" ui-sref="apis.list" class="btn">Back</a>
   </form>
 

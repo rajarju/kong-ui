@@ -10,11 +10,11 @@
     $stateProvider
       .state('core', {
         abstract: true,
-        templateUrl : 'app/pages/core/core.html'
+        templateUrl : 'app/pages/core/html/core.html'
       })
       .state('core.connect', {
         url: '/',
-        templateUrl: 'app/pages/core/core.connect.html',
+        templateUrl: 'app/pages/core/html/core.connect.html',
         controller: 'CoreConnectController',
         controllerAs: 'connect',
         resolve: {
@@ -25,7 +25,7 @@
       })
       .state('core.kong', {
         url: '/kong',
-        templateUrl: 'app/pages/core/core.kong.html',
+        templateUrl: 'app/pages/core/html/core.kong.html',
         controller: 'CoreKongController',
         controllerAs: 'kong',
         resolve: {
@@ -44,7 +44,8 @@
         controller: function(kongServer, $state){
           kongServer.disconnect();
           $state.go('core.connect');
-        }
+        },
+        controllerAs: 'kong'
       })
       ;
   }

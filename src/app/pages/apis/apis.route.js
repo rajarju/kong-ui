@@ -10,11 +10,11 @@
     $stateProvider
       .state('apis', {
         abstract: true,
-        templateUrl : 'app/pages/apis/apis.html'
+        templateUrl : 'app/pages/core/html/core.html'
       })
       .state('apis.list', {
         url: '/apis',
-        templateUrl: 'app/pages/apis/apis.list.html',
+        templateUrl: 'app/pages/apis/html/apis.list.html',
         controller: 'ApisController',
         controllerAs: 'apis',
         resolve: {
@@ -28,8 +28,22 @@
       })
       .state('apis.add', {
         url: '/apis/add',
-        templateUrl: 'app/pages/apis/apis.add.html',
-        controller: 'ApisAddController',
+        templateUrl: 'app/pages/apis/html/apis.add.html',
+        controller: 'ApisEditController',
+        controllerAs: 'apis',
+        resolve: {
+          kongServerInfo : function(kongServer){
+            return kongServer.server();
+          },
+          metaData: function(metaData){
+            return metaData;
+          }
+        }
+      })
+      .state('apis.edit', {
+        url: '/apis/:apiId/edit',
+        templateUrl: 'app/pages/apis/html/apis.add.html',
+        controller: 'ApisEditController',
         controllerAs: 'apis',
         resolve: {
           kongServerInfo : function(kongServer){

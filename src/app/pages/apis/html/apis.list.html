@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <h1>APIS</h1>
   <table class="table table-hover">
 
@@ -27,9 +27,8 @@
         <td>{{api.preserve_host}}</td>
         <td>{{api.created_at}}</td>
         <td>
-          <small><a href="#" class="btn btn-link" ui-sref="apis.api(api.id)"><i class="glyphicon glyphicon-pencil"></i></a></small>
-
-          <small><a href="#" class="btn btn-link" ui-sref="apis.delete(api.id)"><i class="glyphicon glyphicon-trash"></i></a></small>
+          <small><a href="#" class="btn btn-link" ui-sref="apis.edit({apiId: api.id})"><i class="glyphicon glyphicon-pencil"></i></a></small>
+          <small><a href="#" class="btn btn-link" ui-sref="apis.delete({apiId: api.id})"><i class="glyphicon glyphicon-trash"></i></a></small>
         </td>
       </tr>
 

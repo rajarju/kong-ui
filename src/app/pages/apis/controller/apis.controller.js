@@ -13,7 +13,6 @@
 
     var apis = Apis.query(function(){
       vm.apis = apis.data;
-      console.log(apis.data);
     });
 
   }

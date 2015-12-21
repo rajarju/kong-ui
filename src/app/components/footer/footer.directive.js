@@ -21,7 +21,7 @@
 
     /** @ngInject */
     function FooterController() {
-      var vm = this;
+      // var vm = this;
     }
   }
 
