@@ -14,6 +14,6 @@
     var apis = Apis.query(function(){
       vm.apis = apis.data;
     });
-
+    
   }
 })();

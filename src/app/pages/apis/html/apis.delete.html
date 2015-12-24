@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Delete API</h1>
+  <form name="deleteForm">
+    <div class="api">
+
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="(key, value) in apis.api">{{key}} : {{value}}</li>
+      </ul>
+
+    </div>
+    <p>
+      Are you sure, that you want to delete this API
+    </p>
+    <div class="controls">
+      <button class="btn btn-danger" type="button" name="button" ng-click="apis.deleteApi()">Delete</button>
+      <a ui-sref="apis.list" class="btn btn-default" type="button" name="button">Cancel</a>
+    </div>
+  </form>
+</div>

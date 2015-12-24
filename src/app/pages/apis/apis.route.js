@@ -54,6 +54,20 @@
           }
         }
       })
+      .state('apis.delete', {
+        url: '/apis/:apiId/delete',
+        templateUrl: 'app/pages/apis/html/apis.delete.html',
+        controller: 'ApisDeleteController',
+        controllerAs: 'apis',
+        resolve: {
+          kongServerInfo : function(kongServer){
+            return kongServer.server();
+          },
+          metaData: function(metaData){
+            return metaData;
+          }
+        }
+      })
       ;
   }
 
